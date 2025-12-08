@@ -3,7 +3,7 @@ import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { Dashboard } from './components/Dashboard';
 import { LoginScreen } from './components/LoginScreen';
-import { ClientsView } from './components/views/ClientsView';
+import ClientList from './components/ClientList';
 import { OrdersView } from './components/views/OrdersView';
 import { AuditView } from './components/views/AuditView';
 import { InventoryView } from './components/views/InventoryView';
@@ -11,74 +11,69 @@ import { RepairOrder, RepairStatus, User, Language, View, Client, AuditLog, Equi
 
 // Mock Data
 const DUMMY_REPAIRS: RepairOrder[] = [
-  { 
-    id: 'ORD-2345', 
+  {
+    id: 'ORD-2345',
     clientId: 'C-101',
-    clientName: 'Juan Pérez', 
+    clientName: 'Juan Pérez',
     equipmentId: 'E-505',
-    equipmentModel: 'MacBook Pro 2019', 
+    equipmentModel: 'MacBook Pro 2019',
     entryDate: '2023-10-25',
     diagnosis: 'Pantalla parpadea',
     observations: 'Golpe en esquina',
-    status: RepairStatus.IN_REPAIR, 
-    estimatedCost: 350 
+    status: RepairStatus.IN_REPAIR,
+    estimatedCost: 350
   },
-  { 
-    id: 'ORD-2346', 
+  {
+    id: 'ORD-2346',
     clientId: 'C-102',
-    clientName: 'María García', 
+    clientName: 'María García',
     equipmentId: 'E-506',
-    equipmentModel: 'Dell XPS 13', 
+    equipmentModel: 'Dell XPS 13',
     entryDate: '2023-10-26',
     diagnosis: 'Sin diagnóstico',
     observations: 'Batería hinchada visible',
-    status: RepairStatus.PENDING, 
-    estimatedCost: 120 
+    status: RepairStatus.PENDING,
+    estimatedCost: 120
   },
-  { 
-    id: 'ORD-2342', 
+  {
+    id: 'ORD-2342',
     clientId: 'C-99',
-    clientName: 'Usuario Demo', 
+    clientName: 'Usuario Demo',
     equipmentId: 'E-400',
-    equipmentModel: 'PS5 Digital', 
+    equipmentModel: 'PS5 Digital',
     entryDate: '2023-10-24',
     diagnosis: 'Puerto HDMI dañado',
     observations: 'Reemplazo de puerto',
-    status: RepairStatus.READY, 
-    estimatedCost: 180 
+    status: RepairStatus.READY,
+    estimatedCost: 180
   },
-  { 
-    id: 'ORD-2340', 
+  {
+    id: 'ORD-2340',
     clientId: 'C-88',
-    clientName: 'Ana Smith', 
+    clientName: 'Ana Smith',
     equipmentId: 'E-332',
-    equipmentModel: 'iPhone 13', 
+    equipmentModel: 'iPhone 13',
     entryDate: '2023-10-20',
     diagnosis: 'Suciedad en puerto de carga',
     observations: 'Limpieza profunda',
-    status: RepairStatus.DELIVERED, 
-    estimatedCost: 45 
+    status: RepairStatus.DELIVERED,
+    estimatedCost: 45
   },
-  { 
-    id: 'ORD-2344', 
+  {
+    id: 'ORD-2344',
     clientId: 'C-105',
-    clientName: 'TecnoCorp SA', 
+    clientName: 'TecnoCorp SA',
     equipmentId: 'E-510',
-    equipmentModel: 'Lenovo ThinkPad', 
+    equipmentModel: 'Lenovo ThinkPad',
     entryDate: '2023-10-23',
     diagnosis: 'Sistema lento',
     observations: 'Upgrade SSD + RAM',
-    status: RepairStatus.DIAGNOSTIC, 
-    estimatedCost: 150 
+    status: RepairStatus.DIAGNOSTIC,
+    estimatedCost: 150
   },
 ];
 
-const DUMMY_CLIENTS: Client[] = [
-  { id: 'C-101', fullName: 'Juan Pérez', documentId: '12345678', phone: '099123456', email: 'juan@mail.com', address: 'Calle 123', entryDate: '2021-05-10' },
-  { id: 'C-102', fullName: 'María García', documentId: '87654321', phone: '098111222', email: 'maria@mail.com', address: 'Av Principal 500', entryDate: '2023-09-15' },
-  { id: 'C-99', fullName: 'Usuario Demo', documentId: '99999999', phone: '099000000', email: 'demo@mail.com', address: 'Test Address', entryDate: '2023-01-20' },
-  { id: 'C-105', fullName: 'TecnoCorp SA', documentId: 'RUC-2022', phone: '022334455', email: 'contact@tecnocorp.com', address: 'Edificio Central', entryDate: '2019-11-01' },
-];
+// DUMMY_CLIENTS removed as we now use real API data via ClientList component
 
 const DUMMY_EQUIPMENT: Equipment[] = [
   { id: 'E-505', brand: 'Apple', model: 'MacBook Pro 2019', type: 'Notebook', serialNumber: 'C02YW123', physicalCondition: 'Bueno, golpe en esquina' },
@@ -100,7 +95,7 @@ const DUMMY_AUDIT: AuditLog[] = [
 const App: React.FC = () => {
   // State for Authentication
   const [user, setUser] = useState<User | null>(null);
-  
+
   // State for Settings & Nav
   const [language, setLanguage] = useState<Language>('es');
   const [currentView, setCurrentView] = useState<View>('DASHBOARD');
@@ -133,11 +128,11 @@ const App: React.FC = () => {
 
   // --- Render View Content ---
   const renderContent = () => {
-    switch(currentView) {
+    switch (currentView) {
       case 'DASHBOARD':
         return <Dashboard repairs={visibleRepairs} language={language} userRole={user?.role || 'USER'} />;
       case 'CLIENTS':
-        return <ClientsView clients={DUMMY_CLIENTS} language={language} />;
+        return <ClientList />;
       case 'ORDERS':
         return <OrdersView orders={visibleRepairs} language={language} />;
       case 'AUDIT':
@@ -160,18 +155,18 @@ const App: React.FC = () => {
 
   if (!user) {
     return (
-      <LoginScreen 
-        onLogin={handleLogin} 
-        language={language} 
-        setLanguage={setLanguage} 
+      <LoginScreen
+        onLogin={handleLogin}
+        language={language}
+        setLanguage={setLanguage}
       />
     );
   }
 
   return (
     <div className="flex h-screen bg-gray-50 overflow-hidden">
-      <Sidebar 
-        isOpen={sidebarOpen} 
+      <Sidebar
+        isOpen={sidebarOpen}
         userRole={user.role}
         language={language}
         currentView={currentView}
@@ -180,7 +175,7 @@ const App: React.FC = () => {
       />
 
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header 
+        <Header
           sidebarOpen={sidebarOpen}
           onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
           user={user}

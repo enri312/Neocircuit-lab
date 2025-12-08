@@ -8,14 +8,33 @@ export enum RepairStatus {
 
 export type View = 'DASHBOARD' | 'CLIENTS' | 'EQUIPMENT' | 'ORDERS' | 'PARTS' | 'HISTORY' | 'REPORTS' | 'SETTINGS' | 'AUDIT';
 
+export type ClientCategory = 'Nuevo' | 'VIP' | 'Especial';
+
 export interface Client {
   id: string;
-  fullName: string;
-  documentId: string; // Cédula / RUC
-  phone: string;
-  email: string;
-  address: string;
-  entryDate: string; // YYYY-MM-DD
+  nombre: string;
+  cedulaRuc: string;
+  telefono?: string;
+  email?: string;
+  direccion?: string;
+  categoria: ClientCategory;
+  fechaRegistro: string;
+  antiguedadDias: number;
+}
+
+export interface CreateClientDto {
+  nombre: string;
+  cedulaRuc: string;
+  telefono?: string;
+  email?: string;
+  direccion?: string;
+}
+
+export interface UpdateClientDto {
+  nombre: string;
+  telefono?: string;
+  email?: string;
+  direccion?: string;
 }
 
 export interface Equipment {
@@ -30,7 +49,7 @@ export interface Equipment {
 export interface RepairOrder {
   id: string;
   clientId: string;
-  clientName: string; 
+  clientName: string;
   equipmentId: string;
   equipmentModel: string;
   entryDate: string;
@@ -42,11 +61,15 @@ export interface RepairOrder {
 
 export interface AuditLog {
   id: string;
-  timestamp: string;
   userId: string;
   userName: string;
   action: string;
+  entityName: string;
+  entityId: string;
   details: string;
+  timestamp: string;
+  oldValues?: string;
+  newValues?: string;
 }
 
 export interface LogoGenerationState {

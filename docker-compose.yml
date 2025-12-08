@@ -8,11 +8,11 @@ services:
     environment:
       POSTGRES_USER: neocircuit_user
       POSTGRES_PASSWORD: neocircuit_password
-      POSTGRES_DB: neocircuitlab
+      POSTGRES_DB: neocircuit_lab
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
 
   n8n:
     image: n8nio/n8n
@@ -27,6 +27,12 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=http://localhost:5678/
       - GENERIC_TIMEZONE=America/Asuncion
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=neocircuit_lab
+      - DB_POSTGRESDB_USER=neocircuit_user
+      - DB_POSTGRESDB_PASSWORD=neocircuit_password
     volumes:
       - n8n_data:/home/node/.n8n
 

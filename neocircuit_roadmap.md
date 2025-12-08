@@ -2,7 +2,7 @@
 
 ## 📋 Información del Proyecto
 
-**Nombre:** NeoCircuit Lab (TechFix Manager)  
+**Nombre:** NeoCircuit Lab 
 **Tipo:** Sistema de Gestión para Taller de Reparación de Computadoras y Notebooks  
 **Stack Tecnológico:**
 - **Backend:** .NET 10 LTS + C# 14
@@ -52,8 +52,8 @@
 - [ ] Configurar Electron (opcional para app escritorio)
 
 #### 1.3 Diseño de Base de Datos PostgreSQL 18.1
-- [ ] Diseñar esquema completo (modelo entidad-relación)
-- [ ] Entidades principales:
+- [x] Diseñar esquema completo (modelo entidad-relación)
+- [x] Entidades principales:
   - **Clientes** (ID, Nombre, Cédula/RUC, Teléfono, Email, Dirección, Categoría, Fecha Registro)
   - **Equipos** (ID, Marca, Modelo, Tipo, Serie, Estado Físico, ID_Cliente)
   - **Órdenes de Reparación** (ID, ID_Cliente, ID_Equipo, Fecha Ingreso, Diagnóstico, Estado, Costo, Técnico)
@@ -63,9 +63,9 @@
   - **Categorías de Cliente** (Nuevo, VIP, Especial)
   - **Usuarios** (ID, Username, Password, Rol, Email)
   - **AuditLog** (ID, Entidad, Acción, Usuario, Fecha, DatosAntiguos, DatosNuevos)
-- [ ] Crear DbContext en Entity Framework
-- [ ] Configurar migraciones iniciales
-- [ ] Scripts de seed data (datos de prueba)
+- [x] Crear DbContext en Entity Framework
+- [x] Configurar migraciones iniciales
+- [x] Scripts de seed data (datos de prueba)
 
 #### 1.4 Docker Compose - Stack Completo
 - [x] Configurar PostgreSQL 18.1 en Docker
@@ -74,18 +74,18 @@
 - [x] Crear Dockerfile para backend
 - [x] Crear Dockerfile para frontend
 - [x] Configurar networking entre contenedores
-- [ ] Setup de health checks
-- [ ] Crear archivo `.env.example`
-- [ ] Documentar comandos de Docker
-- [ ] Script de inicialización de BD (`init-db.sql`)
+- [x] Setup de health checks
+- [x] Crear archivo `.env.example`
+- [x] Documentar comandos de Docker
+- [x] Script de inicialización de BD (`init-db.sql`)
 
 #### 1.5 Configuración Inicial de N8N
-- [ ] Instalar N8N en Docker
-- [ ] Configurar credenciales de acceso
-- [ ] Conectar N8N a PostgreSQL (para almacenar workflows)
-- [ ] Configurar zona horaria (America/Asuncion)
-- [ ] Configurar webhooks URL
-- [ ] Crear carpeta para workflows predefinidos
+- [x] Instalar N8N en Docker
+- [x] Configurar credenciales de acceso
+- [x] Conectar N8N a PostgreSQL (para almacenar workflows)
+- [x] Configurar zona horaria (America/Asuncion)
+- [x] Configurar webhooks URL
+- [x] Crear carpeta para workflows predefinidos
 
 **Entregables Fase 1:**
 - Estructura de proyecto completa
@@ -140,20 +140,21 @@
 - [ ] Logging de todas las operaciones
 
 #### 2.5 Backend - Sistema de Auditoría
-- [ ] Crear `AuditLogService`
-- [ ] Registrar cambios en `AuditLog` table
+#### 2.5 Backend - Sistema de Auditoría
+- [x] Crear `AuditLogService`
+- [x] Registrar cambios en `AuditLog` table
 - [ ] Middleware para capturar operaciones CRUD
-- [ ] Endpoint para consultar auditoría: `GET /api/auditlog/clientes/{id}`
+- [x] Endpoint para consultar auditoría: `GET /api/auditlog/clientes/{id}`
 
 #### 2.6 Frontend - UI de Clientes
-- [ ] Página de listado de clientes (tabla con paginación)
-- [ ] Formulario para crear/editar cliente
-- [ ] Modal de confirmación para eliminar
-- [ ] Búsqueda en tiempo real
-- [ ] Filtro por categoría
-- [ ] Badge visual de categoría
-- [ ] **Cálculo y visualización de antigüedad** (días desde registro)
-- [ ] **Panel de auditoría** - Mostrar historial de cambios del cliente
+- [x] Página de listado de clientes (tabla con paginación)
+- [x] Formulario para crear/editar cliente
+- [x] Modal de confirmación para eliminar
+- [x] Búsqueda en tiempo real
+- [x] Filtro por categoría
+- [x] Badge visual de categoría
+- [x] **Cálculo y visualización de antigüedad** (días desde registro)
+- [x] **Panel de auditoría** - Mostrar historial de cambios del cliente
 - [ ] Exportar lista a Excel (preparación)
 
 **Entregables Fase 2:**
@@ -235,6 +236,10 @@
 - [ ] Lógica de cambio de estado con validaciones
 - [ ] Auditoría completa de cambios
 - [ ] **Servicio de webhooks a N8N**
+- [ ] **Integración IA Local (Ollama - deepseek-r1:8b)**
+  - [ ] Instalar/Configurar Ollama localmente
+  - [ ] Crear servicio `IOllamaService` en Backend
+  - [ ] Endpoint para generar pre-diagnóstico basado en notas/síntomas
 
 #### 4.3 Backend - Integración con N8N
 - [ ] Crear `N8nWebhookService`
