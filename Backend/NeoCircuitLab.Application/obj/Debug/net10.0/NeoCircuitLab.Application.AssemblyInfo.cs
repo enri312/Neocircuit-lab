@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeoCircuitLab.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2afc71d3da0d883de8c262de7562354a36dceb06")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+582d4eebd96a18543f72f34ef933a90ee67ac7c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeoCircuitLab.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeoCircuitLab.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

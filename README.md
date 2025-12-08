@@ -33,22 +33,22 @@
 ### **FASE 1: Configuración Inicial del Proyecto (Semana 1)**
 
 #### 1.1 Setup del Backend (.NET)
-- [x] Crear solución .NET con estructura Clean Architecture
-- [x] Configurar proyectos:
+- [ ] Crear solución .NET con estructura Clean Architecture
+- [ ] Configurar proyectos:
   - `NeoCircuitLab.Domain` - Entidades y reglas de negocio
   - `NeoCircuitLab.Application` - Casos de uso y lógica
   - `NeoCircuitLab.Infrastructure` - Datos y servicios externos
   - `NeoCircuitLab.API` - Controladores y endpoints REST
-- [x] Configurar Entity Framework Core
-- [x] Setup inicial de dependencias y paquetes NuGet
-- [x] Configurar settings (appsettings.json)
+- [ ] Configurar Entity Framework Core
+- [ ] Setup inicial de dependencias y paquetes NuGet
+- [ ] Configurar settings (appsettings.json)
 
 #### 1.2 Setup del Frontend (React)
-- [x] Integrar proyecto React existente
-- [x] Configurar proxy para desarrollo (vite.config.ts)
-- [x] Setup de variables de entorno (.env)
-- [x] Configurar TypeScript estricto
-- [x] Instalar dependencias base (axios, react-router, React Hook Form)
+- [ ] Integrar proyecto React existente
+- [ ] Configurar proxy para desarrollo (vite.config.ts)
+- [ ] Setup de variables de entorno (.env)
+- [ ] Configurar TypeScript estricto
+- [ ] Instalar dependencias base (axios, react-router, React Hook Form)
 - [ ] Configurar Electron (opcional para app escritorio)
 
 #### 1.3 Diseño de Base de Datos PostgreSQL 18.1
@@ -68,12 +68,12 @@
 - [ ] Scripts de seed data (datos de prueba)
 
 #### 1.4 Docker Compose - Stack Completo
-- [x] Configurar PostgreSQL 18.1 en Docker
-- [x] Configurar N8N con persistencia en PostgreSQL
-- [x] Configurar volúmenes para datos persistentes
-- [x] Crear Dockerfile para backend
-- [x] Crear Dockerfile para frontend
-- [x] Configurar networking entre contenedores
+- [ ] Configurar PostgreSQL 18.1 en Docker
+- [ ] Configurar N8N con persistencia en PostgreSQL
+- [ ] Configurar volúmenes para datos persistentes
+- [ ] Crear Dockerfile para backend
+- [ ] Crear Dockerfile para frontend
+- [ ] Configurar networking entre contenedores
 - [ ] Setup de health checks
 - [ ] Crear archivo `.env.example`
 - [ ] Documentar comandos de Docker
@@ -99,35 +99,35 @@
 ### **FASE 2: Módulo de Gestión de Clientes (Semana 2)**
 
 #### 2.1 Backend - Dominio de Clientes
-- [x] Crear entidad `Cliente` con Value Objects
-- [x] Enum para `CategoriaCliente` (Nuevo, VIP, Especial)
+- [ ] Crear entidad `Cliente` con Value Objects
+- [ ] Enum para `CategoriaCliente` (Nuevo, VIP, Especial)
 - [ ] Validaciones de negocio (Cédula/RUC válido)
-- [x] Método para calcular antigüedad del cliente
-- [x] Interfaz `IClienteRepository`
+- [ ] Método para calcular antigüedad del cliente
+- [ ] Interfaz `IClienteRepository`
 
 #### 2.2 Backend - Aplicación de Clientes
-- [x] Commands: 
+- [ ] Commands: 
   - `CrearClienteCommand`
   - `ActualizarClienteCommand`
   - `EliminarClienteCommand`
   - `CambiarCategoriaClienteCommand`
-- [x] Queries: 
+- [ ] Queries: 
   - `ObtenerClientesQuery`
   - `ObtenerClientePorIdQuery`
   - `BuscarClienteQuery`
   - `ObtenerClientesPorCategoriaQuery`
-- [x] DTOs para Cliente (con antigüedad calculada)
+- [ ] DTOs para Cliente (con antigüedad calculada)
 - [ ] Validadores con FluentValidation
 - [ ] AutoMapper profiles
 
 #### 2.3 Backend - Infraestructura
-- [x] Implementar `ClienteRepository`
-- [x] Configuración EF Core para Cliente
-- [x] Búsqueda por nombre, cédula, teléfono
+- [ ] Implementar `ClienteRepository`
+- [ ] Configuración EF Core para Cliente
+- [ ] Búsqueda por nombre, cédula, teléfono
 - [ ] Índices de base de datos para optimizar búsquedas
 
 #### 2.4 Backend - API
-- [x] `ClientesController` con endpoints CRUD
+- [ ] `ClientesController` con endpoints CRUD
   - `GET /api/clientes` - Listar todos (con paginación)
   - `GET /api/clientes/{id}` - Obtener por ID
   - `GET /api/clientes/buscar?termino=` - Buscar

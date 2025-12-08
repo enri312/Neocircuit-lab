@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using NeoCircuitLab.Infrastructure.Data;
 using NeoCircuitLab.Domain.Interfaces;
 using NeoCircuitLab.Infrastructure.Repositories;
+using NeoCircuitLab.Application.Interfaces;
+using NeoCircuitLab.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
 
 var app = builder.Build();
 
