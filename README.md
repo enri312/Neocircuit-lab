@@ -2,7 +2,7 @@
 
 ## 📋 Información del Proyecto
 
-**Nombre:** NeoCircuit Lab (TechFix Manager)  
+**Nombre:** NeoCircuit Lab  
 **Tipo:** Sistema de Gestión para Taller de Reparación de Computadoras y Notebooks  
 **Stack Tecnológico:**
 - **Backend:** .NET 10 LTS + C# 14
