@@ -33,22 +33,22 @@
 ### **FASE 1: Configuración Inicial del Proyecto (Semana 1)**
 
 #### 1.1 Setup del Backend (.NET)
-- [ ] Crear solución .NET con estructura Clean Architecture
-- [ ] Configurar proyectos:
+- [x] Crear solución .NET con estructura Clean Architecture
+- [x] Configurar proyectos:
   - `NeoCircuitLab.Domain` - Entidades y reglas de negocio
   - `NeoCircuitLab.Application` - Casos de uso y lógica
   - `NeoCircuitLab.Infrastructure` - Datos y servicios externos
   - `NeoCircuitLab.API` - Controladores y endpoints REST
-- [ ] Configurar Entity Framework Core
-- [ ] Setup inicial de dependencias y paquetes NuGet
-- [ ] Configurar settings (appsettings.json)
+- [x] Configurar Entity Framework Core
+- [x] Setup inicial de dependencias y paquetes NuGet
+- [x] Configurar settings (appsettings.json)
 
 #### 1.2 Setup del Frontend (React)
-- [ ] Integrar proyecto React existente
-- [ ] Configurar proxy para desarrollo (vite.config.ts)
-- [ ] Setup de variables de entorno (.env)
-- [ ] Configurar TypeScript estricto
-- [ ] Instalar dependencias base (axios, react-router, React Hook Form)
+- [x] Integrar proyecto React existente
+- [x] Configurar proxy para desarrollo (vite.config.ts)
+- [x] Setup de variables de entorno (.env)
+- [x] Configurar TypeScript estricto
+- [x] Instalar dependencias base (axios, react-router, React Hook Form)
 - [ ] Configurar Electron (opcional para app escritorio)
 
 #### 1.3 Diseño de Base de Datos PostgreSQL 18.1
