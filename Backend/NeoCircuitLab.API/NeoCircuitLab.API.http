@@ -1,0 +1,6 @@
+@NeoCircuitLab.API_HostAddress = http://localhost:5133
+
+GET {{NeoCircuitLab.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

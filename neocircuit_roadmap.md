@@ -5,8 +5,8 @@
 **Nombre:** NeoCircuit Lab (TechFix Manager)  
 **Tipo:** Sistema de Gestión para Taller de Reparación de Computadoras y Notebooks  
 **Stack Tecnológico:**
-- **Backend:** C# + ASP.NET Core 8.0 (API REST)
-- **Frontend:** React + TypeScript (Aplicación Web/Escritorio con Electron)
+- **Backend:** .NET 10 LTS + C# 14
+- **Frontend:** React 19+ TypeScript 5.8.2 (Aplicación Web/Escritorio con Electron)
 - **Base de Datos:** PostgreSQL 18.1
 - **Automatización:** N8N (Workflows y notificaciones)
 - **PDF Generation:** QuestPDF
@@ -681,7 +681,7 @@
 - [ ] Roles: 
   - **Administrador** - Acceso completo
   - **Técnico** - Gestión de órdenes y repuestos
-  - **Recepcionista** - Solo registro y consulta
+  - **Usuario** - Solo registro y consulta
 - [ ] Crear usuarios por defecto en seed
 - [ ] Gestión de contraseñas seguras
 - [ ] Políticas de contraseñas

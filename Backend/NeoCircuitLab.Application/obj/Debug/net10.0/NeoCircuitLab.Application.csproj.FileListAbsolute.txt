@@ -1,0 +1,16 @@
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.csproj.AssemblyReference.cache
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.AssemblyInfoInputs.cache
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.AssemblyInfo.cs
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.csproj.CoreCompileInputs.cache
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.sourcelink.json
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\bin\Debug\net10.0\NeoCircuitLab.Application.deps.json
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\bin\Debug\net10.0\NeoCircuitLab.Application.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\bin\Debug\net10.0\NeoCircuitLab.Application.pdb
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\bin\Debug\net10.0\NeoCircuitLab.Domain.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\bin\Debug\net10.0\NeoCircuitLab.Domain.pdb
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircu.2983CBA7.Up2Date
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\refint\NeoCircuitLab.Application.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\NeoCircuitLab.Application.pdb
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.Application\obj\Debug\net10.0\ref\NeoCircuitLab.Application.dll
