@@ -16,13 +16,14 @@ public class Cliente : BaseEntity
     // Entity Framework Constructor
     protected Cliente() { }
 
-    public Cliente(string nombre, string cedulaRuc, string? telefono, string? email, string? direccion)
+    public Cliente(string nombre, string cedulaRuc, string? telefono, string? email, string? direccion, CategoriaCliente categoria = CategoriaCliente.Nuevo)
     {
         Nombre = nombre;
         CedulaRuc = cedulaRuc;
         Telefono = telefono;
         Email = email;
         Direccion = direccion;
+        Categoria = categoria;
     }
 
     public void ActualizarDatos(string nombre, string? telefono, string? email, string? direccion)

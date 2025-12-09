@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nbdFfCx1i/c=",
+  "dgSpecHash": "3f8lJh+vms4=",
   "success": true,
   "projectFilePath": "C:\\Users\\enri3\\OneDrive\\Desktop\\Projectos\\Neocircuit-lab\\Backend\\NeoCircuitLab.Application\\NeoCircuitLab.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\enri3\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\enri3\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\enri3\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.0\\microsoft.entityframeworkcore.10.0.0.nupkg.sha512",
     "C:\\Users\\enri3\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.0\\microsoft.entityframeworkcore.abstractions.10.0.0.nupkg.sha512",
     "C:\\Users\\enri3\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.0\\microsoft.entityframeworkcore.analyzers.10.0.0.nupkg.sha512",

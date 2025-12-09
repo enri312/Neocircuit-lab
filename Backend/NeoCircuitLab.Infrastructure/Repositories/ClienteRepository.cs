@@ -19,6 +19,11 @@ public class ClienteRepository : IClienteRepository
         return await _context.Clientes.FirstOrDefaultAsync(c => c.Id == id);
     }
 
+    public async Task<Cliente?> GetByCedulaRucAsync(string cedulaRuc)
+    {
+        return await _context.Clientes.FirstOrDefaultAsync(c => c.CedulaRuc == cedulaRuc);
+    }
+
     public async Task<IEnumerable<Cliente>> GetAllAsync()
     {
         return await _context.Clientes.ToListAsync();

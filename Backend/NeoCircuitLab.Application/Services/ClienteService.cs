@@ -3,28 +3,31 @@ using NeoCircuitLab.Application.Interfaces;
 using NeoCircuitLab.Domain.Entities;
 using NeoCircuitLab.Domain.Enums;
 using NeoCircuitLab.Domain.Interfaces;
+using AutoMapper;
 
 namespace NeoCircuitLab.Application.Services;
 
 public class ClienteService : IClienteService
 {
     private readonly IClienteRepository _repository;
+    private readonly IMapper _mapper;
 
-    public ClienteService(IClienteRepository repository)
+    public ClienteService(IClienteRepository repository, IMapper mapper)
     {
         _repository = repository;
+        _mapper = mapper;
     }
 
     public async Task<IEnumerable<ClienteDto>> GetAllAsync()
     {
         var clientes = await _repository.GetAllAsync();
-        return clientes.Select(MapToDto);
+        return _mapper.Map<IEnumerable<ClienteDto>>(clientes);
     }
 
     public async Task<ClienteDto?> GetByIdAsync(Guid id)
     {
         var cliente = await _repository.GetByIdAsync(id);
-        return cliente == null ? null : MapToDto(cliente);
+        return cliente == null ? null : _mapper.Map<ClienteDto>(cliente);
     }
 
     public async Task<IEnumerable<ClienteDto>> SearchAsync(string term)
@@ -34,7 +37,7 @@ public class ClienteService : IClienteService
             c.Nombre.Contains(term, StringComparison.OrdinalIgnoreCase) ||
             c.CedulaRuc.Contains(term, StringComparison.OrdinalIgnoreCase) ||
             (c.Telefono != null && c.Telefono.Contains(term, StringComparison.OrdinalIgnoreCase)));
-        return filtered.Select(MapToDto);
+        return _mapper.Map<IEnumerable<ClienteDto>>(filtered);
     }
 
     public async Task<IEnumerable<ClienteDto>> GetByCategoriaAsync(string categoria)
@@ -42,16 +45,33 @@ public class ClienteService : IClienteService
         var clientes = await _repository.GetAllAsync();
         if (Enum.TryParse<CategoriaCliente>(categoria, true, out var cat))
         {
-            return clientes.Where(c => c.Categoria == cat).Select(MapToDto);
+            var filtered = clientes.Where(c => c.Categoria == cat);
+            return _mapper.Map<IEnumerable<ClienteDto>>(filtered);
         }
         return [];
     }
 
     public async Task<ClienteDto> CreateAsync(CreateClienteDto dto)
     {
-        var cliente = new Cliente(dto.Nombre, dto.CedulaRuc, dto.Telefono, dto.Email, dto.Direccion);
+        // Check for duplicate CedulaRuc
+        var existingCliente = await _repository.GetByCedulaRucAsync(dto.CedulaRuc);
+        if (existingCliente != null)
+        {
+            throw new InvalidOperationException($"Ya existe un cliente con la Cédula/RUC: {dto.CedulaRuc}");
+        }
+
+        // Parse categoria from string to enum (default to Nuevo)
+        var categoria = CategoriaCliente.Nuevo;
+        if (!string.IsNullOrEmpty(dto.Categoria) && Enum.TryParse<CategoriaCliente>(dto.Categoria, true, out var parsedCategoria))
+        {
+            categoria = parsedCategoria;
+        }
+
+        // Manual mapping for creation to ensure domain invariants via constructor
+        var cliente = new Cliente(dto.Nombre, dto.CedulaRuc, dto.Telefono, dto.Email, dto.Direccion, categoria);
+
         await _repository.AddAsync(cliente);
-        return MapToDto(cliente);
+        return _mapper.Map<ClienteDto>(cliente);
     }
 
     public async Task<ClienteDto?> UpdateAsync(Guid id, UpdateClienteDto dto)
@@ -61,7 +81,7 @@ public class ClienteService : IClienteService
 
         cliente.ActualizarDatos(dto.Nombre, dto.Telefono, dto.Email, dto.Direccion);
         await _repository.UpdateAsync(cliente);
-        return MapToDto(cliente);
+        return _mapper.Map<ClienteDto>(cliente);
     }
 
     public async Task<bool> DeleteAsync(Guid id)
@@ -85,16 +105,4 @@ public class ClienteService : IClienteService
         await _repository.UpdateAsync(cliente);
         return true;
     }
-
-    private static ClienteDto MapToDto(Cliente c) => new(
-        c.Id,
-        c.Nombre,
-        c.CedulaRuc,
-        c.Telefono,
-        c.Email,
-        c.Direccion,
-        c.Categoria.ToString(),
-        c.FechaRegistro,
-        c.CalcularAntiguedadDias()
-    );
 }

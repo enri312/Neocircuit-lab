@@ -184,3 +184,15 @@ C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.A
 C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\obj\Debug\net10.0\NeoCircuitLab.API.pdb
 C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\obj\Debug\net10.0\NeoCircuitLab.API.genruntimeconfig.cache
 C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\obj\Debug\net10.0\ref\NeoCircuitLab.API.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\ClosedXML.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\ClosedXML.Parser.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\ExcelNumberFormat.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\FluentValidation.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\RBush.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\SixLabors.Fonts.dll
+C:\Users\enri3\OneDrive\Desktop\Projectos\Neocircuit-lab\Backend\NeoCircuitLab.API\bin\Debug\net10.0\System.IO.Packaging.dll

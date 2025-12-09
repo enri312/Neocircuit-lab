@@ -21,13 +21,15 @@ export const ClientForm: React.FC<ClientFormProps> = ({ client, onClose, onSucce
             cedulaRuc: client.cedulaRuc,
             telefono: client.telefono || '',
             email: client.email || '',
-            direccion: client.direccion || ''
+            direccion: client.direccion || '',
+            categoria: client.categoria || 'Nuevo'
         } : {
             nombre: '',
             cedulaRuc: '',
             telefono: '',
             email: '',
-            direccion: ''
+            direccion: '',
+            categoria: 'Nuevo'
         }
     });
 
@@ -143,6 +145,18 @@ export const ClientForm: React.FC<ClientFormProps> = ({ client, onClose, onSucce
                                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
                                 placeholder="Dirección completa..."
                             />
+                        </div>
+
+                        <div className="space-y-1">
+                            <label className="text-sm font-medium text-gray-700">Categoría</label>
+                            <select
+                                {...register('categoria')}
+                                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white"
+                            >
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="VIP">VIP</option>
+                                <option value="Especial">Especial</option>
+                            </select>
                         </div>
 
                         <div className="pt-4 flex justify-end gap-3 border-t border-gray-50 mt-6">

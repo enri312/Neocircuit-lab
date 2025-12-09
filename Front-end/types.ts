@@ -28,6 +28,7 @@ export interface CreateClientDto {
   telefono?: string;
   email?: string;
   direccion?: string;
+  categoria?: ClientCategory;
 }
 
 export interface UpdateClientDto {
@@ -35,6 +36,7 @@ export interface UpdateClientDto {
   telefono?: string;
   email?: string;
   direccion?: string;
+  categoria?: ClientCategory;
 }
 
 export interface Equipment {

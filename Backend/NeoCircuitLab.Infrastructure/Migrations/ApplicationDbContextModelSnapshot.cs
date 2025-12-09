@@ -86,16 +86,19 @@ namespace NeoCircuitLab.Infrastructure.Migrations
 
                     b.Property<string>("CedulaRuc")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Direccion")
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<DateTime>("FechaRegistro")
                         .HasColumnType("timestamp with time zone");
@@ -105,17 +108,95 @@ namespace NeoCircuitLab.Infrastructure.Migrations
 
                     b.Property<string>("Nombre")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Telefono")
-                        .HasColumnType("text");
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.HasIndex("Categoria")
+                        .HasDatabaseName("IX_Clientes_Categoria");
+
+                    b.HasIndex("CedulaRuc")
+                        .IsUnique()
+                        .HasDatabaseName("IX_Clientes_CedulaRuc");
+
+                    b.HasIndex("IsDeleted")
+                        .HasDatabaseName("IX_Clientes_IsDeleted");
+
+                    b.HasIndex("Nombre")
+                        .HasDatabaseName("IX_Clientes_Nombre");
+
+                    b.HasIndex("Telefono")
+                        .HasDatabaseName("IX_Clientes_Telefono");
+
+                    b.ToTable("Clientes", (string)null);
+                });
+
+            modelBuilder.Entity("NeoCircuitLab.Domain.Entities.Equipo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("EstadoFisico")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Marca")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Modelo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Notas")
+                        .HasColumnType("text");
+
+                    b.Property<string>("NumeroSerie")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PasswordDispositivo")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Equipos");
+                });
+
+            modelBuilder.Entity("NeoCircuitLab.Domain.Entities.Equipo", b =>
+                {
+                    b.HasOne("NeoCircuitLab.Domain.Entities.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 #pragma warning restore 612, 618
         }
